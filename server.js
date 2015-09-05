@@ -62,7 +62,7 @@ app.get('/status',function(req,res){
 	 +'"}';
 	res.send(jsn);
 })
-app.listen(80);
+app.set('port', process.env.PORT || 3000);
 
 
 var bool = function(x){
