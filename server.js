@@ -70,10 +70,14 @@ app.get('/status',function(req,res){
 	res.send(jsn);
 })
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.listen(80);
 =======
 app.set('port', process.env.PORT || 3000);
 >>>>>>> parent of d876592... simple test
+=======
+app.listen(80);
+>>>>>>> parent of 37c57be... Port Change
 
 
 var bool = function(x){
