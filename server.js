@@ -1,10 +1,15 @@
 var express = require('express');
+var bodyParser = require('body-parser')
+
 var app = express();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 //Specify a port
 var port = process.env.port || 8080;
 =======
+=======
+>>>>>>> parent of d876592... simple test
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
@@ -64,7 +69,11 @@ app.get('/status',function(req,res){
 	 +'"}';
 	res.send(jsn);
 })
+<<<<<<< HEAD
 app.listen(80);
+=======
+app.set('port', process.env.PORT || 3000);
+>>>>>>> parent of d876592... simple test
 
 
 var bool = function(x){
@@ -74,11 +83,67 @@ var bool = function(x){
 }
 
 
+<<<<<<< HEAD
 >>>>>>> parent of 37c57be... Port Change
+=======
+>>>>>>> parent of d876592... simple test
 
-//Serve up files in public folder
-app.use('/', express.static(__dirname + '/public'));
 
+<<<<<<< HEAD
 //Start up the website
 app.listen(port);
 console.log('Listening on port: ', port);
+=======
+var processRequest = function(name,block,punch,sync){
+var p = name.split(".")[0];
+	if(gover)
+		return;
+	if(health2<0){
+		console.log("Player 1 Wins!!!");
+		gover = true;
+		return;
+	}
+	if(health1<0){
+		console.log("Player 2 Wins!!!");
+		gover = true;
+		return;
+	}
+	//if(!bool(sync))
+		//console.log("unsynced ",name);
+	if(name=="1.left"){
+		p1left = bool(block);
+		sync1l = bool(sync);
+	}
+	else if(name=="1.right"){
+		p1right = bool(block);
+		sync1r = bool(sync);
+	}
+	else if(name=="2.left"){
+		p2left = bool(block);
+		sync2l = bool(sync);
+		//console.log(name,block,punch);
+	}
+	else if(name=="2.right"){
+		p2right = bool(block);
+		sync2r = bool(sync);
+	}
+	if(punch>0&&sync1l&&sync1r&&sync2l&&sync2r){
+		//console.log(p1left,p1right,p2left,p2right);
+		punch = punch*3;
+		console.log(punch);
+		if(name=="1.right"&&p2left||name=="1.left"&&p2right||name=="2.right"&&p1left||name=="2.left"&&p1right){
+			punch = punch/10;//reduce punch by 90% if blocked
+			console.log("punch blocked");
+		}
+		
+		if(p==1){
+			health2=health2-punch;
+			console.log("Player 2 Health: ",health2);
+		}
+		if(p==2){
+			health1 = health1-punch;
+			console.log("Player 1 Health: ",health1);
+		}
+	}
+};
+>>>>>>> parent of d876592... simple test
