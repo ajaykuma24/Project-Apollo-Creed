@@ -24,7 +24,7 @@ app.post('/',function(req,res){
 	{
 		var p = req.body.name.split(".")[0];
 		if(p=="1"&&countdown>0){
-			console.log(countdown,sscore);
+			//console.log(countdown,sscore);
 			sscore = sscore + Number(req.body.punch);
 		}
 	}
@@ -121,6 +121,7 @@ app.get('/sstatus',function(req,res){
 })
 
 app.listen(process.env.PORT || 3000);
+
 
 var bool = function(x){
 	if(x=="true")
