@@ -18,6 +18,7 @@ console.log("server starting");
 app.post('/',function(req,res){
 	//console.log("post recieved");
 	res.send("meh");
+	console.log(req.body.name)
 	if(ismulti)
 		processRequest(req.body.name,req.body.block,req.body.punch, req.body.sync);
 	else
