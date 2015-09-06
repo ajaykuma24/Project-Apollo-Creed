@@ -1,9 +1,7 @@
-console.log("server.js")
 var express = require('express');
 var bodyParser = require('body-parser')
 
 var app = express();
-console.log("express loaded")
 
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
@@ -11,7 +9,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 app.use(bodyParser.raw());
 app.use(bodyParser.text());
-console.log("body-parser")
+
 var p1weight = 130;
 var p2weight = 130;
 var ismulti = true;
@@ -39,7 +37,6 @@ var gstart = false;
 
 var countdown = 60;
 var sscore = 0;
-console.log("before weight")
 app.post('/weight',function(req,res){
 	res.send("meeh");
 	console.log(req.body);
@@ -50,19 +47,17 @@ app.post('/weight',function(req,res){
 		p2weight = req.body.p2weight;
 
 })
-console.log("before jade")
 app.set('view engine','jade');
 app.use(express.static('static'));
-console.log("serve jade")
+
 app.get('/',function(req,res){
-	console.log("website")
 	res.render('index');
 });
 
 
 
 
-console.log("timeout function")
+
 
 var cdown = function(){
 	setTimeout(function(){
@@ -74,14 +69,14 @@ var cdown = function(){
 		cdown();
 		},1000);
 }
-console.log("start function")
+
 app.post('/start',function(req,res){
 	res.send("starting");
 	gstart = true;
 	if(req.body.game=="1")
 		cdown();
 });
-console.log("reset function")
+
 var reset = function(){
 	health1 = 1000;
 	health2 = 1000;
@@ -125,7 +120,7 @@ app.get('/sstatus',function(req,res){
 	ismulti = false;
 })
 
-app.listen(process.env.PORT || 3000);
+app.listen(80);
 
 
 var bool = function(x){
@@ -179,7 +174,7 @@ var p = name.split(".")[0];
 		punch = punch*3;
 		console.log(punch);
 		if(name=="1.right"&&p2left||name=="1.left"&&p2right||name=="2.right"&&p1left||name=="2.left"&&p1right){
-			punch = punch/10;//reduce punch by 90% if blocked
+			punch = punch*.2;//reduce punch by 80% if blocked
 			console.log("punch blocked");
 		}
 		
