@@ -195,6 +195,7 @@ var bool = function(x){
 
 
 var processRequest = function(name,block,sync){
+	console.log(name)
 var p = name.split(".")[0];
 	//console.log(bool(sync));
 	var mkey = getKey(name);
