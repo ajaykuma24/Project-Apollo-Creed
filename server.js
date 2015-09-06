@@ -182,7 +182,7 @@ app.get('/sstatus',function(req,res){
 	ismulti = false;
 })
 
-app.listen(80);
+app.listen(process.env.PORT || 3000);
 
 
 var bool = function(x){
