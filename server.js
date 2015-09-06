@@ -50,9 +50,10 @@ app.post('/weight',function(req,res){
 		p2weight = req.body.p2weight;
 
 })
+console.log("before jade")
 app.set('view engine','jade');
 app.use(express.static('static'));
-
+console.log("serve jade")
 app.get('/',function(req,res){
 	console.log("website")
 	res.render('index');
@@ -61,7 +62,7 @@ app.get('/',function(req,res){
 
 
 
-
+console.log("timeout function")
 
 var cdown = function(){
 	setTimeout(function(){
@@ -73,14 +74,14 @@ var cdown = function(){
 		cdown();
 		},1000);
 }
-
+console.log("start function")
 app.post('/start',function(req,res){
 	res.send("starting");
 	gstart = true;
 	if(req.body.game=="1")
 		cdown();
 });
-
+console.log("reset function")
 var reset = function(){
 	health1 = 1000;
 	health2 = 1000;
