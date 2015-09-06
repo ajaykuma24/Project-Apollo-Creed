@@ -1,0 +1,30 @@
+.container2 h2{
+	font-size:5vh;
+	display:block;
+}
+.container2 .progress{
+	height:7vh;
+}
+
+.gear{
+	display:inline;
+	height: 50%;
+}
+.header h2{
+	display:inline;
+}
+.header{
+	display:block;
+	height:10vh;
+}
+
+.buttons{
+	width:30%;
+	margin:auto;
+}
+.buttons button{
+	width:40%;
+	margin:5px;
+}
+
+
