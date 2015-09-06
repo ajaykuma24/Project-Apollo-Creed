@@ -1,7 +1,9 @@
+console.log("server.js")
 var express = require('express');
 var bodyParser = require('body-parser')
 
 var app = express();
+console.log("express loaded")
 
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
@@ -9,7 +11,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 app.use(bodyParser.raw());
 app.use(bodyParser.text());
-
+console.log("body-parser")
 var p1weight = 130;
 var p2weight = 130;
 var ismulti = true;
