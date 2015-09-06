@@ -37,6 +37,7 @@ var gstart = false;
 
 var countdown = 60;
 var sscore = 0;
+console.log("before weight")
 app.post('/weight',function(req,res){
 	res.send("meeh");
 	console.log(req.body);
@@ -51,6 +52,7 @@ app.set('view engine','jade');
 app.use(express.static('static'));
 
 app.get('/',function(req,res){
+	console.log("website")
 	res.render('index');
 });
 
